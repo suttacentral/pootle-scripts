@@ -3,4 +3,3 @@ amagama/
 env/
 state.pickle
 *.pyc
-local.conf
