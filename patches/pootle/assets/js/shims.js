@@ -56,6 +56,7 @@ $(document).on('editor_ready', function(e) {
         sc.paliLookup.mouseovertarget = 'body';
         sc.paliLookup.main = 'body'
         sc.paliLookup.activate();
+        sc.popup.clear()
     }
     
     activateGlossary = function() {

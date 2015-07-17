@@ -7,9 +7,7 @@ cp -rv patches/pootle/* env/lib/python2.7/site-packages/pootle/
 
 echo "Clearing Django Cache in Really Hacky Way"
 echo "from django.core.cache import cache; cache.clear();" | pootle shell
-echo "\nBut it worked\n"
-
-pootle collectassets
+echo "But it worked"
 
 pootle assets clean
 echo "yes" | pootle collectstatic
