@@ -1,5 +1,5 @@
-pootle/
-amagama/
-env/
-state.pickle
+/pootle
+/amagama
+/env
+/state.pickle
 *.pyc

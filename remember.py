@@ -6,9 +6,10 @@ import time
 import pathlib
 import subprocess
 
-from config import config
 # Sync Period in seconds
-SYNC_PERIOD = config.get('tm', 'sync_period')
+SYNC_PERIOD = 5
+
+
 POOTLE_DIR = pathlib.Path(os.environ.get('POOTLE_DIR', '.'))
 if 'PO_DIR' in os.environ:
     PO_DIR = os.environ['PO_DIR']
