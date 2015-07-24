@@ -29,10 +29,10 @@ try:
         for folder in PO_DIR.glob('*'):
             if not folder.is_dir():
                 continue
-            if folder.name in {'tutorial', 'terminology', '.tmp'}:
+            if folder.name in {'tutorial', 'terminology', 'test', '.tmp'}:
                 continue
             todo = []
-            files = list(folder.glob('**/*.po'))
+            files = list(folder.glob('en/*.po'))
             for file in files:
                 uid = file.stem
                 mtime = file.stat().st_mtime
@@ -40,7 +40,7 @@ try:
                     continue
                 todo.append((uid, file, mtime))
             
-            if len(files) == len(todo):
+            if len(files) == len(todo) > 0:
                 r = subprocess.check_output(['amagama-manage',
                                                 'build_tmdb',
                                                 '--verbose',
