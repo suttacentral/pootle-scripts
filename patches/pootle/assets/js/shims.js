@@ -2,6 +2,17 @@
 
 (function(){
 
+
+function getScripts(scripts) {
+    var promises = [];
+    
+    scripts.forEach(function(script) {
+        promises.push(jQuery.getScript(script));
+    })
+    
+    return jQuery.when.apply(promises);
+}
+
 /* Perform human sorting
  * This crude implementation pads all numbers to 6 digits long
  * as such it will break down for numbers larger than 999999
@@ -47,7 +58,9 @@ window.PTL.editor.copyOriginal = function (sources) {
       active = $(targets).get(0);
       active.focus();
       /* Should we make this fuzzy? */
-      var text = $($(newval).text()).text();
+      
+      var text = $('<div>' + newval + '</div>').text().trim();
+      text = $('<div>' + text + '</div>').text().trim()
       if (text.search(/[a-zA-Zāīōū]/) != -1) {
           // Make this fuzzy
           PTL.editor.goFuzzy();
