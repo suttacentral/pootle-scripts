@@ -56,19 +56,27 @@
                         .text-popup span.current_lookup:not(.punctuation) {
                           color: saturated-color(dark-purple);
                           background: yellow; }
+                          @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\0000371}}
+                          .text-popup .accept {
+                            color: #666;
+                            cursor: pointer; }
+                            @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\0000375}}
+                            .text-popup .accepted {
+                              font-weight: bold;
+                              color: #000; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\0000383}}
 .text-popup .content {
   word-break: break-word; }
-  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\0000378}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\0000387}}
   .text-popup .content, .text-popup dl, .text-popup dd {
     display: inline;
     padding: 0;
     margin: 0; }
-    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\0000384}}
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\0000393}}
     .text-popup dt {
       display: none; }
-      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\0000388}}
+      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\0000397}}
       .text-popup .source {
         background: #ccc;
         border-radius: 0.25em;
@@ -77,28 +85,28 @@
         margin-left: 0.5em;
         font-size: 90%;
         font-weight: bold; }
-        @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\0000399}}
+        @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003108}}
         .text-popup .pali ul {
           margin: 0; }
-          @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003103}}
+          @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003112}}
           .text-popup .pali li {
             height: 1.5em;
             margin-top: 0.1em;
             margin-bottom: 0.1em;
             overflow: hidden; }
-            @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003110}}
+            @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003119}}
             .text-popup .pali ul {
               list-style: none; }
-              @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003116}}
+              @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003125}}
               .text-popup .pali .expandable {
                 cursor: pointer; }
-                @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003118}}
+                @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003127}}
                 .text-popup .pali .expandable.clicked {
                   cursor: inherit; }
-        @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003123}}
+        @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003132}}
         .text-popup .pali .poor-match {
           background-color: #ead7d0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003137}}
 .text-popup .popup-text-overlay {
   padding: 0.1em;
   position: absolute;
@@ -108,12 +116,12 @@
   background: pink;
   overflow-y: auto;
   overflow-x: hidden; }
-  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003138}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003147}}
   .text-popup .popup-text-overlay .source {
     height: 1em;
     width: initial;
     padding: 0.05em 0.25em 0.35em 0.2em; }
-    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003144}}
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003153}}
     .text-popup .popup-text-overlay .popup-close-button {
       margin-right: 0.7em;
       font-size: 150%;
@@ -122,61 +130,61 @@
       height: 0.5em;
       text-align: center;
       text-shadow: 2px 2px 2px black; }
-      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003153}}
+      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003162}}
       .text-popup .popup-text-overlay .popup-close-button:hover {
         cursor: pointer; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003160}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003169}}
 .lookup-word-marker {
   display: inline-block;
   position: absolute; }
 
-  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003165}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003174}}
   .decomposed {
     font-weight: bold;
     background-color: white;
     border-radius: 0.1em;
     padding: 0.1em 0.5em; }
-    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003170}}
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003179}}
     .decomposed .letter {
       margin: 0em;
       display: inline-block;
       padding: 0em 0.05em; }
-      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003174}}
+      @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003183}}
       .decomposed .letter.selected {
         background-color: #dadada; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003180}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003189}}
 .add-glossary-entry {
   padding: 0;
   margin: 0;
   font-size: 80%; }
-  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003184}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003193}}
   .add-glossary-entry input {
     width: 22%; }
-    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003187}}
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003196}}
     .add-glossary-entry button {
       width: 7%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003193}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003202}}
 .term .diff-replace, .term .diff-delete, .term .diff-insert {
   background-color: #fcedbe; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003198}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003207}}
 .text-popup .hide {
   display: none; }
 
-  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003204}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003213}}
   td.unhide {
     text-align: right;
     font-size: 60%;
     background: #fcece6; }
-    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003208}}
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003217}}
     td.unhide:hover {
       background: #fefaf8;
       cursor: pointer; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003214}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/blake\/programming\/suttacentral\/static\/css\/text\/lookup\.scss}line{font-family:\00003223}}
 tr.glossary td {
   padding: 2px;
   ￼  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); }

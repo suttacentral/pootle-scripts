@@ -159,15 +159,15 @@ $(document).on('editor_ready', function(e) {
                 <script src="http://localhost/js/lib/sorted-stringify.js"></script>\
                 <script src="http://localhost/js/sc_popup.js"></script>\
                 <script src="http://localhost/js/paliLookup2.0.js"></script>\
-                <link rel="stylesheet" href="http://localhost/css/compiled/paliLookup2.1-standalone.css">');
+                <link rel="stylesheet" href="http://localhost/css/compiled/paliLookup2.2-standalone.css">');
                 promise = $.Deferred();
                 _.delay(function(){promise.resolve()}, 200);
             } else {
                 promise = $.ajax({
-                    url: "/assets/js/paliLookup2.1-standalone.js",
+                    url: "/assets/js/paliLookup2.2-standalone.js",
                     dataType: "script",
                     cache: true});
-                $(document.body).append('<link rel="stylesheet" href="/assets/css/paliLookup2.1-standalone.css">');
+                $(document.body).append('<link rel="stylesheet" href="/assets/css/paliLookup2.2-standalone.css">');
             }
             
         }
