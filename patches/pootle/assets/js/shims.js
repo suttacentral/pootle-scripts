@@ -164,7 +164,7 @@ $(document).on('editor_ready', function(e) {
                 _.delay(function(){promise.resolve()}, 200);
             } else {
                 promise = $.ajax({
-                    url: "/assets/js/paliLookup2.0-standalone.js",
+                    url: "/assets/js/paliLookup2.1-standalone.js",
                     dataType: "script",
                     cache: true});
                 $(document.body).append('<link rel="stylesheet" href="/assets/css/paliLookup2.1-standalone.css">');
