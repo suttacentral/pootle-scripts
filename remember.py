@@ -32,7 +32,7 @@ try:
             if folder.name in {'tutorial', 'terminology', 'test', '.tmp'}:
                 continue
             todo = []
-            files = list(folder.glob('en/*.po'))
+            files = list(folder.glob('en/**/*.po'))
             for file in files:
                 uid = file.stem
                 mtime = file.stat().st_mtime
