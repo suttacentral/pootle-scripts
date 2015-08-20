@@ -177,6 +177,33 @@ $(document).on('editor_ready', function(e) {
                .then(activateGlossary);
     }
     
+    /* Shortcuts */
+    var currentId = parseInt($('#item-number').val(), 10),
+        maxId = parseInt($('#items-count').text(), 10);
+    
+    // Create a version of gotoIndex which can only be calld once
+    // otherwise extreme problems occur if the keyboard shortcut is
+    // invoked more than once.
+    var gotoIndex = _.once(_.bind(PTL.editor.gotoIndex, PTL.editor));
+    console.log('Adding new shims : ', currentId, maxId);
+    shortcut.add('ctrl+shift+up', function(e) {
+        gotoIndex(Math.max(1, currentId - 10));
+    });
+    
+    shortcut.add('ctrl+shift+down', function(e) {
+        gotoIndex(Math.min(currentId + 10, maxId));
+    });
+    
+    shortcut.add('shift+pageup', function(e) {
+        gotoIndex(1);
+    });
+    shortcut.add('shift+pagedown', function(e) {
+        gotoIndex(maxId);
+    });
+    
+    // Rebind ctrl+shift+n
+    shortcut.add('ctrl+shift+g', shortcut.all_shortcuts["ctrl+shift+n"].callback);
+    
 
 });
 
