@@ -185,7 +185,7 @@ $(document).on('editor_ready', function(e) {
     // otherwise extreme problems occur if the keyboard shortcut is
     // invoked more than once.
     var gotoIndex = _.once(_.bind(PTL.editor.gotoIndex, PTL.editor));
-    console.log('Adding new shims : ', currentId, maxId);
+    
     shortcut.add('ctrl+shift+up', function(e) {
         gotoIndex(Math.max(1, currentId - 10));
     });
@@ -204,6 +204,14 @@ $(document).on('editor_ready', function(e) {
     // Rebind ctrl+shift+n
     shortcut.add('ctrl+shift+g', shortcut.all_shortcuts["ctrl+shift+n"].callback);
     
+    // Copy Original
+    
+    shortcut.add('alt+down', function() {
+      $('.js-copyoriginal').click()
+    });
+    shortcut.add('ctrl+b', function() {
+      $('.js-copyoriginal').click()
+    });
 
 });
 
