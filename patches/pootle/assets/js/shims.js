@@ -178,8 +178,8 @@ $(document).on('editor_ready', function(e) {
     }
     
     /* Shortcuts */
-    var currentId = parseInt($('#item-number').val(), 10),
-        maxId = parseInt($('#items-count').text(), 10);
+    var currentIndex = parseInt($('#item-number').val(), 10),
+        maxIndex = parseInt($('#items-count').text(), 10);
     
     // Create a version of gotoIndex which can only be calld once
     // otherwise extreme problems occur if the keyboard shortcut is
@@ -187,18 +187,18 @@ $(document).on('editor_ready', function(e) {
     var gotoIndex = _.once(_.bind(PTL.editor.gotoIndex, PTL.editor));
     
     shortcut.add('ctrl+shift+up', function(e) {
-        gotoIndex(Math.max(1, currentId - 10));
+        gotoIndex(Math.max(1, currentIndex - 10));
     });
     
     shortcut.add('ctrl+shift+down', function(e) {
-        gotoIndex(Math.min(currentId + 10, maxId));
+        gotoIndex(Math.min(currentIndex + 10, maxIndex));
     });
     
     shortcut.add('shift+pageup', function(e) {
         gotoIndex(1);
     });
     shortcut.add('shift+pagedown', function(e) {
-        gotoIndex(maxId);
+        gotoIndex(maxIndex);
     });
     
     // Rebind ctrl+shift+n
