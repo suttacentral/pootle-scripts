@@ -105,7 +105,6 @@ try:
                                         '-s', 'pi',
                                         '-t', 'en',
                                         '-i', str(temp_dir)])
-            print(r)
     
     time.sleep(SCAN_PERIOD)
 
