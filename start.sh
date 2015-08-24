@@ -1,5 +1,9 @@
 #!/bin/bash
 
+kill `cat server.pid` 2>/dev/null
+
+echo $$ > server.pid
+
 POOTLE_DIR=/home/$USER/pootle
 AMAGAMA_DIR=$POOTLE_DIR/amagama
 
