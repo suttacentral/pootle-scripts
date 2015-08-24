@@ -21,5 +21,5 @@ amagama &
 pootle start &
 
 # Start script which updates TM
-./remember.py
+nice ./remember.py
 
