@@ -212,8 +212,86 @@ $(document).on('editor_ready', function(e) {
     shortcut.add('ctrl+b', function() {
       $('.js-copyoriginal').click()
     });
-
 });
+
+
+function addAcceptShortcut() {
+    // Accept TM suggestion
+    var TMSuggestions = $('[id^=tm] .js-editor-copytext').has('.suggestion-translation'),
+        TMSuggestionPlace = 0,
+        resetTimeout;
+        
+    console.log('Suggestions: ', TMSuggestions.length);
+
+    if (TMSuggestions.length > 0) {
+        shortcut.add('ctrl+m', function() {
+            var suggestion = TMSuggestions[TMSuggestionPlace];
+            TMSuggestionPlace += 1;
+            TMSuggestionPlace %= TMSuggestions.length;
+            $(suggestion).click().css('background', '#fff');
+            setTimeout(function(){$(suggestion).css('background', "")}, 150);
+        });
+        if (resetTimeout != null) clearTimeout(resetTimeout);
+        resetTimeout = setTimeout(function(){TMSuggestionPlace = 0}, 9000);
+    }
+}
+
+function cleanText(text) {
+    // Remove variant notes and other span classes
+    text = text.replace(/<span[^>]+class=\\?"(?:var|cross|dquo|squo|gatn|brnum)\\?"[^>]+>([^>]+)<\/span>/ig, "$1");
+    // Remove anchors
+    text = text.replace(/<a[^>]+>([^<]+)<\/a>/ig, "$1");
+    return text
+}
+/* Gets TM suggestions from amaGama */
+  PTL.editor.getTMUnits = _.bind(function () {
+    var unit = this.units.getCurrent(),
+        store = unit.get('store'),
+        src = store.get('source_lang'),
+        tgt = store.get('target_lang'),
+        sText = cleanText(unit.get('source')[0]),
+        pStyle = store.get('project_style'),
+        tmUrl = this.settings.tmUrl + src + "/" + tgt +
+          "/unit/?source=" + encodeURIComponent(sText) + "&jsoncallback=?";
+    console.log('Source Text ', sText);
+    if (!sText.length) {
+        // No use in looking up an empty string
+        return;
+    }
+
+    if (pStyle.length && pStyle != "standard") {
+        tmUrl += '&style=' + pStyle;
+    }
+
+    // Always abort previous requests so we only get results for the
+    // current unit
+    if (this.tmReq != null) {
+      this.tmReq.abort();
+    }
+
+    this.tmReq = $.jsonp({
+      url: tmUrl,
+      callback: '_jsonp' + PTL.editor.units.getCurrent().id,
+      dataType: 'jsonp',
+      cache: true,
+      success: function (data) {
+        var uid = this.callback.slice(6);
+
+        if (uid == PTL.editor.units.getCurrent().id && data.length) {
+          var filtered = PTL.editor.filterTMResults(data),
+              name = gettext("Similar translations"),
+              tm = PTL.editor.tmpl.tm({store: store.toJSON(),
+                                       suggs: filtered,
+                                       name: name});
+
+          $(tm).hide().appendTo("#extras-container")
+                      .slideDown(1000, 'easeOutQuad');
+          addAcceptShortcut();
+        }
+      },
+      error: PTL.editor.error
+    });
+  }, PTL.editor);
 
 
 })();

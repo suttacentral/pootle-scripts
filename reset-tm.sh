@@ -18,4 +18,3 @@ echo "Removing old database"
 echo 'y' | amagama-manage dropdb -s pi
 echo "Initializing fresh database"
 amagama-manage initdb -s pi
-rm state.pickle
