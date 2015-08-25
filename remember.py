@@ -62,13 +62,13 @@ watch_list = []
 subprocess.check_output('./reset-tm.sh')
 
 try:
-    i = 0
+    runs = 0
     while True:
-        if i % int(DEEP_SCAN_PERIOD / SCAN_PERIOD) == 0:
+        if runs % int(DEEP_SCAN_PERIOD / SCAN_PERIOD) == 0:
             files_to_scan = get_files()
         else:
             files_to_scan = watch_list
-        i += 1
+        runs += 1
         
         file_mtimes = []
         for i, file in enumerate(files_to_scan):
@@ -89,6 +89,7 @@ try:
             state[file] = mtime
             todo.append(file)
         if len(todo) > 0:
+            processed_count = 0
             for file in todo:
                 with file.open('r', encoding='utf8') as f:
                     text = f.read()
@@ -97,7 +98,8 @@ try:
                     continue
                 outfile = temp_dir / (file.parent.stem + '_' + file.name)
                 with outfile.open('w', encoding='utf8') as f:
-                    f.write(text)                
+                    f.write(text)
+                processed_count += 1
             
             r = subprocess.check_output(['amagama-manage',
                                         'build_tmdb',
@@ -106,7 +108,7 @@ try:
                                         '-t', 'en',
                                         '-i', str(temp_dir)])
     
-    time.sleep(SCAN_PERIOD)
+        time.sleep(SCAN_PERIOD)
 
 except KeyboardInterrupt:
     exit(0)
